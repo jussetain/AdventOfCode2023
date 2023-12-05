@@ -12,7 +12,6 @@ const stripHeader = (line) => {
     }
 
     return null;
-
 }
 
 const getNumbers = (line) => {
