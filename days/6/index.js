@@ -5,15 +5,15 @@ const lines = readLines("./days/6/inputs.txt");
 
 const timesRegex = /(Time:)/, distanceRegex = /(Distance:)/;
 
-const times = lines[0].replace(timesRegex, "").trim().split(" ").filter(v => v).map(v => Number(v));
-const distances = lines[1].replace(distanceRegex, "").trim().split(" ").filter(v => v).map(v => Number(v));
+const time = Number(lines[0].replace(timesRegex, "").trim().split(" ").filter(v => v).join(""))
+const distance = Number(lines[1].replace(distanceRegex, "").trim().split(" ").filter(v => v).join(""))
 
-const races = [];
 
-for (let i = 0; i < times.length; i++) {
-    races.push(new Race(times[i], distances[i]))
-}
+const race = new Race(time, distance);
+race.setSolutions();
+console.log(race.solutions.length);
 
+/*
 let ways = 1;
 
 for (let i = 0; i < races.length; i++) {
@@ -22,3 +22,4 @@ for (let i = 0; i < races.length; i++) {
 }
 
 console.log(ways)
+*/
